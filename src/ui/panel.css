@@ -1,0 +1,74 @@
+/* 设置面板样式（悬浮面板，入口为托盘"设置"菜单） */
+
+.aq-panel {
+  position: fixed;
+  top: 64px;
+  right: 14px;
+  z-index: 100;
+  width: 268px;
+  max-height: calc(100vh - 84px);
+  overflow-y: auto;
+  padding: 14px 16px 12px;
+  border-radius: 12px;
+  background: rgba(6, 26, 40, 0.82);
+  border: 1px solid rgba(120, 200, 235, 0.25);
+  backdrop-filter: blur(10px);
+  color: #d7eefb;
+  font-size: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+}
+.aq-panel.hidden {
+  display: none;
+}
+
+.aq-status {
+  margin-bottom: 10px;
+  padding: 5px 8px;
+  border-radius: 6px;
+  background: rgba(40, 120, 90, 0.35);
+  font-size: 11px;
+}
+.aq-status.paused {
+  background: rgba(140, 100, 20, 0.4);
+}
+
+.aq-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0 4px;
+}
+.aq-val {
+  color: #8fd8f5;
+  font-variant-numeric: tabular-nums;
+}
+
+.aq-panel input[type='range'] {
+  width: 100%;
+  accent-color: #3fb6e8;
+}
+
+.aq-seg {
+  display: flex;
+  gap: 6px;
+  margin: 6px 0 2px;
+}
+.aq-seg button {
+  flex: 1;
+  padding: 4px 0;
+  border: 1px solid rgba(120, 200, 235, 0.3);
+  border-radius: 6px;
+  background: transparent;
+  color: #9cc8dd;
+  font-size: 11px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.aq-seg button:hover {
+  border-color: rgba(120, 200, 235, 0.6);
+}
+.aq-seg button.active {
+  background: #2a7ba8;
+  border-color: #3fb6e8;
+  color: #ffffff;
+}

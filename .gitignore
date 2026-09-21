@@ -1,0 +1,15 @@
+# 依赖与构建产物
+node_modules/
+dist/
+
+# Rust / Tauri 构建产物
+src-tauri/target/
+src-tauri/gen/
+
+# 本地运行日志与二进制
+logs/
+*.exe
+
+# 环境与编辑器
+.DS_Store
+Thumbs.db

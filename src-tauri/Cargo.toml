@@ -1,0 +1,40 @@
+[package]
+name = "desktop-aquarium"
+version = "1.0.8"
+description = "动态 3D 桌面鱼缸 - 嵌入桌面壁纸层的 Three.js 水族箱"
+authors = ["you"]
+edition = "2021"
+
+# 详见 https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = ["tray-icon", "image-png"] }
+tauri-plugin-autostart = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+tracing-appender = "0.2"
+
+# Win32 桌面集成（WorkerW 嵌入 / 窗口样式）
+[target.'cfg(windows)'.dependencies]
+windows = { version = "0.58", features = [
+    "Win32_Foundation",
+    "Win32_UI_WindowsAndMessaging",
+    "Win32_Graphics_Gdi",
+] }
+
+[features]
+# 生产构建必须启用（cargo build --features custom-protocol）。
+# 启用后 tauri::generate_context! 会把 frontendDist（../dist）内嵌进 exe，
+# 页面通过 tauri:// 协议提供；未启用时应用处于 dev 模式，
+# 会尝试加载 devUrl（http://localhost:5173），真机上无开发服务器即白屏。
+custom-protocol = ["tauri/custom-protocol"]
+
+[profile.release]
+strip = true
+lto = true
+codegen-units = 1
