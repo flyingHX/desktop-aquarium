@@ -13,3 +13,5 @@ logs/
 # 环境与编辑器
 .DS_Store
 Thumbs.db
+__pycache__/
+*.pyc
