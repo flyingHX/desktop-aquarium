@@ -9,6 +9,8 @@ src-tauri/gen/
 # 本地运行日志与二进制
 logs/
 *.exe
+# 仓库随附的最新发布版可执行文件（v1.0.8）
+!desktop-aquarium.exe
 
 # 环境与编辑器
 .DS_Store
