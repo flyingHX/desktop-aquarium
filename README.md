@@ -1,4 +1,4 @@
-# 动态 3D 桌面鱼缸（Desktop Aquarium）
+# 桌面养鱼（Desktop Aquarium）
 
 真 3D 桌面鱼缸：Three.js + WebGL2 渲染，Tauri 2 + Rust 嵌入 Windows 桌面壁纸层（WorkerW），鱼缸位于桌面图标下方，默认点击穿透、不抢焦点，图标始终可见、可操作。
 
